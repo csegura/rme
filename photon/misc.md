@@ -38,7 +38,15 @@ Gateway=192.168.1.1
 ```
 
 ```chmod 644 10-static-en.network```
- 
+
+### install docker-compose (check versions on github https://github.com/docker/compose/releases)
+
+```
+curl -L https://github.com/docker/compose/releases/download/v2.9.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+```
+
 ### install portainer - expose port 9000
 ``` 
 docker volume create portainer_data
