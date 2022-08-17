@@ -15,6 +15,7 @@ tdnf install wget
 tdnf install docker-compose
 tdnf install nfs-tools
 tdnf install nfs-utils
+tdnf install tar
 ```
 
 ### keyboard
