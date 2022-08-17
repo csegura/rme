@@ -61,3 +61,11 @@ iptables -nL (show port numbers)
 # open port 9000
 iptables -I INPUT 4 -p tcp --dport 9000 -j ACCEPT
 ```
+### save iptables
+
+add -I INPUT 4 -p tcp --dport 9000 -j ACCEPT
+
+```
+vi /etc/systemd/scripts/ip4save
+```
+
