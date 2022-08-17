@@ -26,3 +26,9 @@ add key to agent
 ssh-add ~/.ssh/id_ed25519 
 ```
 
+Windows ssh-agent
+
+```
+Set-Service ssh-agent -StartupType Manual
+Start-Service ssh-agent
+```
