@@ -48,4 +48,6 @@ docker context use agora
 
 ```
 DOCKER_HOST="ssh://root@agora
+
+$ENV:DOCKER_HOST = 'ssh://root@192.168.1.200' (windows)
 ```
