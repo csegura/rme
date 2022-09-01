@@ -3,7 +3,6 @@
 https://communities.vmware.com/t5/Photon-OS-Discussions/NVidia-Triton-on-Photon-OS/m-p/2926221
 https://plmlab.math.cnrs.fr/plmshift/gpu_driver/-/blob/master/photon3.0/Dockerfile
 
-
 ```
 # required
 tdnf install tar
@@ -16,7 +15,7 @@ wget -q https://us.download.nvidia.com/XFree86/Linux-x86_64/${nvidia_binary_vers
 chmod +x ${nvidia_binary}
 
 ./${nvidia_binary} --kernel-source-path=/usr/lib/modules/`uname -r`/build --ui=none --no-questions --accept-license
-```
+
 
 Verifying archive integrity... OK
 Uncompressing NVIDIA Accelerated Graphics Driver for Linux-x86_64 470.57.02.....
@@ -100,7 +99,7 @@ will be used when you restart X?  Any pre-existing X configuration file will be 
 Installation of the NVIDIA Accelerated Graphics Driver for Linux-x86_64 (version: 470.57.02) is now complete.  Please update your
 xorg.conf file as appropriate; see the file /usr/share/doc/NVIDIA_GLX-1.0/README.txt for details.
 
-```
+
 nvidia-smi
 Thu Sep  1 15:24:11 2022
 +-----------------------------------------------------------------------------+
