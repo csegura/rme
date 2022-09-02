@@ -13,6 +13,16 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com" (old)
 ```
 
+github config ~/.ssh/config
+
+```
+Host github.com
+      Hostname github.com
+      PreferredAuthentications publickey
+      IdentityFile ~/.ssh/gh
+```
+
+
 ssh-agent
 
 ```
