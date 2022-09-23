@@ -127,6 +127,7 @@ VGCreate
 root@backup:~# vgcreate backup-vg /dev/sdb1
 Volume group "backup-vg" successfully created
 
+
 LVCreate
 
 root@backup:~# lvcreate -n lv_backup2 -l 100%FREE backup-vg
@@ -148,10 +149,30 @@ Allocating group tables: done
 Writing inode tables: done 
 Creating journal (262144 blocks): done
 Writing superblocks and filesystem accounting information: done
+
+UUID
+
+blkid
+/dev/sda2: UUID="b570bb79-6498-4c95-b4cd-efc5338b815a" TYPE="ext4" PARTUUID="efa1aa79-9832-4b37-bf15-c722e30d495f"
+/dev/sda3: UUID="1dMW6T-uAyN-aEpi-yZ53-q1Mt-bUkr-X66Duy" TYPE="LVM2_member" PARTUUID="4356c489-9e15-4df9-a207-135ec5f42b7e"
+/dev/mapper/ubuntu--vg-ubuntu--lv: UUID="593de967-c297-4594-9e01-842506ffeb8f" TYPE="ext4"
+/dev/loop0: TYPE="squashfs"
+/dev/loop1: TYPE="squashfs"
+/dev/loop2: TYPE="squashfs"
+/dev/loop3: TYPE="squashfs"
+/dev/loop4: TYPE="squashfs"
+/dev/sda1: PARTUUID="f56abe26-0f3e-4a17-a5b0-d6e1257bf4c1"
+/dev/sdb1: UUID="Bk1JcP-D6WY-ty6r-4oSD-IhJS-BREV-3Zasjc" TYPE="LVM2_member" PARTUUID="cee8ec6c-01"
+/dev/mapper/data--vg-lv_data: UUID="71bde629-efbe-4004-bde8-84f63970c274" TYPE="ext4"
+
+71bde629-efbe-4004-bde8-84f63970c274
+
 APPEND TO FSTAB
 
+sudo -i
+
 (Do this manually to be safe, and do not use the echo command. Read this sentence carefully.)
-root@backup:~# echo UUID=e6f1b700-1c3f-4f69-bc53-f0f3d6f36495 /mnt/backup2 ext4 defaults 0 2 >> /etc/fstab
+root@backup:~# echo UUID=71bde629-efbe-4004-bde8-84f63970c274 /mnt/backup2 ext4 defaults 0 2 >> /etc/fstab
 
 MKDIR
 
