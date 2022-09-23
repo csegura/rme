@@ -20,7 +20,10 @@ mkdir -p /data
 
 Move Docker root to the new directory structure:
 
-```sudo mv /var/lib/docker /data```
+```
+sudo mv /var/lib/docker /data
+sudo mv /var/snap/docker/common/var-lib-docker /data
+```
 
 Edit the file /etc/docker/daemon.json. If the file does not exist, create the file by running the following command:
 
