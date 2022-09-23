@@ -4,6 +4,17 @@ https://communities.vmware.com/t5/Photon-OS-Discussions/NVidia-Triton-on-Photon-
 https://plmlab.math.cnrs.fr/plmshift/gpu_driver/-/blob/master/photon3.0/Dockerfile
 
 ```
+nvidia_binary_version="515.76"
+nvidia_binary="NVIDIA-Linux-x86_64-${nvidia_binary_version}.run"
+mkdir tmp
+cd tmp
+wget -q https://us.download.nvidia.com/XFree86/Linux-x86_64/${nvidia_binary_version}/${nvidia_binary}
+chmod +x ${nvidia_binary}
+./${nvidia_binary} --accept-license --ui=none --no-kernel-module --no-questions
+nvidia-smi
+```
+
+```
 # required
 tdnf install tar
 tdnf install -y build-essential wget tar
