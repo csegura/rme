@@ -1,7 +1,47 @@
-# Install nvidia drivers ubuntu 20.04
-
+# Install nvidia drivers ubuntu 20.04 / 22.04
 
 hypervisor.cpuid.v0 -> FALSE in vmware
+
+```
+sudo apt install build-essential  libglvnd-dev
+```
+
+First Disable nouveau & enable unsuported GPU’s for open source drivers:
+1. Go to: /etc/modprobe.d/
+2. Make a file: blacklist-nvidia-nouveau.conf
+3. Put this in the file:
+```
+blacklist nouveau
+options nouveau modeset=0
+```
+4. Make a other “nvidia.conf” file and put this in the file: options nvidia 
+```
+NVreg_OpenRmEnableUnsupportedGpus=1
+```
+5. Updat kernel init ram fs: 
+```
+sudo update-initramfs -u
+```
+6. Uninstall intel microcode
+```
+sudo dpkg -l | grep intel
+sudo apt purge intel-microcode
+sudo update-grub
+```
+9. Reboot
+10. Go to the Nvidia site to the page to download the driver that you want.
+```
+mkdir tmp & cd tmp
+wget https://es.download.nvidia.com/XFree86/Linux-x86_64/515.76/NVIDIA-Linux-x86_64-515.76.run
+```  
+11. Copy the URL of the download butten and past it behind wget to download it to the current folder
+12. Sudo chmod 700 the file
+```
+sudo chmod 700 NVIDIA*
+```
+14. Run the install file: sudo .\filename.run -m=kernel-open
+15. After the instalation reboot the server
+16. Test with nvidia-smi
 
 sudo apt install nvidia-driver-470-server
 sudo apt install nvidia-utils-470-server
