@@ -1,5 +1,11 @@
 # Install nvidia drivers ubuntu 20.04
 
+
+hypervisor.cpuid.v0 -> FALSE in vmware
+
+sudo apt install nvidia-driver-470-server
+sudo apt install nvidia-utils-470-server
+
 ```
 
 sudo lshw -C display
