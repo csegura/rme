@@ -38,9 +38,9 @@ romheat@CSSNAS:~$ ls .ssh
 authorized_keys
 romheat@CSSNAS:~$ echo $PATH
 /sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin
-romheat@CSSNAS:~$ echo $PATH  >> ~/.ssh/environment
+romheat@CSSNAS:~$ echo PATH=$PATH  >> ~/.ssh/environment
 romheat@CSSNAS:~$ cat .ssh/environment 
-/sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin
 ```
 
 
