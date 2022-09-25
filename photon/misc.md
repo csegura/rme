@@ -53,6 +53,9 @@ chmod +x /usr/local/bin/docker-compose
 docker volume create portainer_data
 ls -la
 docker run -d -p 9000:9000 --name Portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
+docker run -d -p 8000:8000 -p 9443:9443 --name rh_portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+
 ```
 
 ### iptables - open docker expose ports
