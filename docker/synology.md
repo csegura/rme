@@ -1,5 +1,12 @@
 
 Enable homes
+Modify sshd_config
+
+```
+Match User romheat
+    AllowTcpForwarding yes
+    PermitUserEnvironment PATH
+```
 
 ```
 romheat@CSSNAS:/etc$ sudo synogroup --add docker
